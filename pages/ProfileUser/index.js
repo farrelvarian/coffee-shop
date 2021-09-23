@@ -11,18 +11,20 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import cookies from 'next-cookies';
 import router from 'next/router';
+import backendApi from '../../configs/api/backendApi';
 
-function ProfileUser(ctx) {
-  const { token, user_id } = cookies(ctx)
+function ProfileUser({ tokenAccess }) {
   const dispatch = useDispatch();
   const [imagePrev, setImagePrev] = useState(null);
   const [errImage, setErrImage] = useState(false);
   const [errImageType, setErrImageType] = useState(false);
   const profile = useSelector((state) => state.user.profile);
   const [reset, setReset] = useState(false);
-
+  console.log(tokenAccess);
   useEffect(() => {
-      dispatch(getProfile(token, user_id));
+    if (tokenAccess) {
+      dispatch(getProfile(tokenAccess, profile.id));
+    }
   }, [reset]);
 
   const handleChange = (e) => {
@@ -56,14 +58,17 @@ function ProfileUser(ctx) {
     dispatch({ type: 'CHANGE_VALUE', payload: { [e.target.name]: e.target.files[0] } });
   };
   const handleLogout = () => {
-    axios
-      .get(`${process.env.NEXT_PUBLIC_WEB_URL}/api/logout`, { withCredentials: true })
+    backendApi
+      .get("logout", {
+      withCredentials: true
+    })
       .then((res) => {
-        dispatch({ type: 'LOGOUT' });
-        swal('Success', "you're logged out ! see ya", 'success');
-        router.push('/login');
+        console.log(res)
+        dispatch({ type: "LOGOUT" });
+        swal("Success", "you're logged out ! see ya", "success");
+        router.push("/login");
       })
-      .catch((err) => console.log(err, 'Err logout'));
+      .catch((err) => console.log(err, "Err logout"));
   };
   return (
     <Styles>
@@ -112,7 +117,7 @@ function ProfileUser(ctx) {
                       <Button className="btn cancel" type="button" color="shine">
                         Cancel
                       </Button>
-                      <Button onClick={handleLogout} className="btn log-out" type="button" color="white-choco">
+                      <Button onClick={() => handleLogout()} className="btn log-out" type="button" color="white-choco">
                         Log Out
                       </Button>
                     </div>
@@ -486,7 +491,12 @@ const Styles = styled.div`
 `;
 
 export const getServerSideProps = privateRoute(async (ctx) => {
-  return {
-    props: {}, // will be passed to the page component as props
-  };
+  try {
+    const tokenAccess = await ctx.req.headers.cookie;
+    return {
+      props: { tokenAccess }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    console.log(error, 'error when get cookie');
+  }
 });
