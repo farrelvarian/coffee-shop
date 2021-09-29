@@ -15,13 +15,19 @@
 Coffee Shop is a store that sells some good meals, and especially coffee. We provide high quality beans
 
 ## Screenshots
-<p align="center">
-  <image src='https://i.imgur.com/mRjuuGA.png' width=400px/>
-  <image src='https://i.imgur.com/ZdvXeIF.png' width=400px/>
-  <image src='https://i.imgur.com/FllNlME.png' width=400px/>
-  <image src='https://i.imgur.com/ejtzKaP.png' width=400px/>
-  <image src='https://i.imgur.com/U3xfU4X.png' width=400px/>
-  <image src='https://i.imgur.com/wbkxNw5.png' width=400px/>
+
+<p align="center" display=flex>
+  <image src='./screenshots/Coffee Shop1.png' width=45%/>
+  <div align="center">
+    <image src='./screenshots/Coffee Shop2.png' width=45%/>
+    <image src='./screenshots/Coffee Shop3.png' width=45%/>
+    <image src='./screenshots/Coffee Shop4.png' width=45%/>
+    <image src='./screenshots/Coffee Shop6.png' width=45%/>
+    <image src='./screenshots/Coffee Shop7.png' width=45%/>
+    <image src='./screenshots/Coffee Shop8.png' width=45%/>
+    <image src='./screenshots/Coffee Shop9.png' width=45%/>
+    <image src='./screenshots/Coffee Shop10.png' width=45%/>
+  </div>
 </p>
 
 ## Built With
@@ -34,12 +40,12 @@ Coffee Shop is a store that sells some good meals, and especially coffee. We pro
 2. Login
 3. Register
 4. Logout
-2. Form Validation
-3. CRUD Search Sort Pagination
-4. Responsive
-5. Image upload, filter type, max min file size
-6. Navigation handling
-7. Backend API Coffe Shop [`here`](https://github.com/farrelvarian/backend-CoffeeShop)
+5. Form Validation
+6. CRUD Search Sort Pagination
+7. Responsive
+8. Image upload, filter type, max min file size
+9. Navigation handling
+10. Backend API Coffe Shop [`here`](https://github.com/farrelvarian/backend-CoffeeShop)
 
 ## Getting Started
 
@@ -63,8 +69,9 @@ NEXT_PUBLIC_WEB_URL = "http://localhost:3000/"
 - [React Bootstrap](https://react-bootstrap.github.io/)
 
 ## Related Project
-* [`Frontend-coffeshop`](https://github.com/muchamadagush/coffee-shop)
-* [`Backend-coffeshop`](https://github.com/muchamadagush/backend-CoffeeShop)
+
+- [`Frontend-coffeshop`](https://github.com/muchamadagush/coffee-shop)
+- [`Backend-coffeshop`](https://github.com/muchamadagush/backend-CoffeeShop)
 
 ## Team
 
