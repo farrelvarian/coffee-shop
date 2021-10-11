@@ -3,7 +3,7 @@
   <h1 align='center'>Next JS - Coffe Shop</h1>
 </p>
   <p align="center">
-    <a href="https://coffeeshop-sks.muchamadagushermawan.online/">View Demo</a>
+    <a href="https://coffeeshopsks.mochamadrico.xyz/">View Demo</a>
     ·
     <a href="https://github.com/19damah23/coffee-shop/issues">Report Bug</a>
     ·
@@ -21,6 +21,7 @@ Coffee Shop is a store that sells some good meals, and especially coffee. We pro
   <div align="center">
     <image src='./screenshots/Coffee Shop2.png' width=45%/>
     <image src='./screenshots/Coffee Shop3.png' width=45%/>
+    <image src='./screenshots/Coffee Shop16.png' width=45%/>
     <image src='./screenshots/Coffee Shop4.png' width=45%/>
     <image src='./screenshots/Coffee Shop6.png' width=45%/>
     <image src='./screenshots/Coffee Shop7.png' width=45%/>
